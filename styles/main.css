@@ -1,0 +1,10 @@
+.texto-header {
+  text-align: center;
+}
+.contenedor-doble {
+  display: flex;
+}
+.imagen-perfil {
+  height: 100px;
+  width: 100px;
+}

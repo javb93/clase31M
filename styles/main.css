@@ -3,8 +3,33 @@
 }
 .contenedor-doble {
   display: flex;
+  justify-content: center;
 }
 .imagen-perfil {
   height: 100px;
   width: 100px;
+}
+.input-tarea {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 15px;
+  border: 1px solid #ccc;
+}
+.boton-tarea {
+  margin: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.boton-tarea:hover {
+  background-color: #555;
+}
+.lista-tareas {
+  list-style: none;
+  padding: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -32,8 +32,12 @@
       const inputTarea = document.querySelector(".input-tarea");
 
       botonAgregar.addEventListener("click", () => {
-        console.log("Se hizo click en el boton");
-        console.log(inputTarea.value);
+        const tarea = inputTarea.value;
+        const listaTareas = document.querySelector(".lista-tareas");
+        const nuevaTarea = document.createElement("li"); //<li></li>
+        nuevaTarea.textContent = tarea; //<li> valor del input</li>
+        listaTareas.appendChild(nuevaTarea);
+        inputTarea.value = "";
       });
     </script>
   </body>

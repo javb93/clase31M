@@ -13,32 +13,25 @@
   <body>
     <h1 class="texto-header">Lista de tareas</h1>
     <!--Las listas se componen de elemento contenedor y de los datos-->
-
     <!-- REGULARMENTE SE UTILIZAN DIRECCIONES RELATIVAS-->
     <!-- ./public/bernardo.jpeg -->
     <div class="contenedor-doble">
-      <input class="input-tarea" placeholder="Nombre de la tarea" />
+      <input
+        id="input-nombre-tarea"
+        class="input-tarea"
+        placeholder="Nombre de la tarea"
+      />
+      <input
+        id="input-fecha-tarea"
+        class="input-tarea"
+        placeholder="Fecha de entrega"
+        type="date"
+      />
       <!--TODO Cambiar foto de perfil-->
       <button id="boton-agregar-01" class="boton-agregar">Agregar</button>
     </div>
     <br />
-    <ul class="lista-tareas">
-      <li>Tarea 1</li>
-      <li>Tarea 2</li>
-      <li>Tarea 3</li>
-    </ul>
-    <script>
-      const botonAgregar = document.getElementById("boton-agregar-01");
-      const inputTarea = document.querySelector(".input-tarea");
-
-      botonAgregar.addEventListener("click", () => {
-        const tarea = inputTarea.value;
-        const listaTareas = document.querySelector(".lista-tareas");
-        const nuevaTarea = document.createElement("li"); //<li></li>
-        nuevaTarea.textContent = tarea; //<li> valor del input</li>
-        listaTareas.appendChild(nuevaTarea);
-        inputTarea.value = "";
-      });
-    </script>
+    <ul id="tareas-por-hacer" class="lista-tareas"></ul>
   </body>
+  <script src="./lista.js"></script>
 </html>

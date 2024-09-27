@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contacto</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body class="contacto">
+    <form class="contacto">
+      <h1 class="texto-header">Contactanos</h1>
+      <label for="nombre">Nombre:</label>
+      <input id="nombre" name="nombre" placeholder="Nombre" />
+      <label for="correo">Correo:</label>
+      <input id="correo" name="correo" placeholder="Correo" type="email" />
+      <label for="telefono"><Tarea></Tarea>elefono:</label>
+      <input id="telefono" name="telefono" placeholder="Telefono" type="tel" />
+      <h3>Que forma de contacto prefieres?</h3>
+      <div>
+        <input
+          id="contacto-telefono"
+          name="medio-contacto"
+          type="radio"
+          value="telefono"
+        />
+        <label for="contacto-telefono">Telefono</label>
+        <input
+          id="contacto-correo"
+          name="medio-contacto"
+          type="radio"
+          value="correo"
+        />
+        <label for="contacto-correo">Correo</label>
+        <input
+          id="contacto-ambos"
+          name="medio-contacto"
+          type="radio"
+          value="ambos"
+        />
+        <label for="contacto-ambos">Ambos</label>
+      </div>
+      <h3>Cual es tu mensaje</h3>
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Mensaje"></textarea>
+      <button type="submit" id="boton-enviar" class="boton-agregar">
+        Enviar
+      </button>
+      <button type="reset" id="boton-limpiar" class="boton-agregar">
+        Limpiar
+      </button>
+    </form>
+  </body>
+</html>

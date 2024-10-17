@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Tabla</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button onclick="getPokemon()">Traer Pokemon</button>
+    <div id="pokecard"></div>
+    <script>
+      //https://pokeapi.co/api/v2/
+      // endpoint: /pokemon/{id or name}/
+      // TYPE: GET
+      function getPokemon() {
+        var randomID = Math.floor(Math.random() * 1000) + 1;
+        // ESTA ES LA LLAMADA A LA OPERACION, REGRESA ALGO CONOCIDO COMO PROMESA
+        fetch("https://pokeapi.co/api/v2/pokemon/" + randomID)
+          .then((res) => {
+            // ESTA ES LA FUNCION QUE SE EJECUTA AL TERMINAR EL REQUEST
+            if (res.status == 200) {
+              return res.json(); // METODO ASINCRONO PARA PROCESAR EL BODY A JSON
+            }
+          })
+          .then((data) => {
+            console.log(data);
+            var pokecard = document.getElementById("pokecard");
+
+            var img = document.createElement("img");
+            img.src = data.sprites.front_default;
+            var criesound = new Audio(data.cries.latest);
+            criesound.play();
+            pokecard.appendChild(img);
+          });
+      }
+    </script>
+  </body>
+</html>

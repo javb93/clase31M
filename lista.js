@@ -4,23 +4,9 @@ const inputFecha = document.getElementById("input-fecha-tarea");
 const listaTareas = document.getElementById("tareas-por-hacer");
 
 botonAgregar.addEventListener("click", () => {
-  const tarea = inputTarea.value;
-  if (tarea === "") {
-    alert("Debes escribir una tarea");
-    return;
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
   }
-  const nuevaTarea = document.createElement("li"); //<li></li>
-  const textoTarea = document.createTextNode(tarea); //valor del input
-  textoTarea.textContent = tarea + " - " + inputFecha.value + " ";
-  nuevaTarea.appendChild(textoTarea); //<li>textoTarea</li>
-  const botonBorrar = document.createElement("button");
-  botonBorrar.textContent = "Terminar";
-  botonBorrar.addEventListener("click", () => {
-    nuevaTarea.remove();
-  });
-
-  nuevaTarea.appendChild(botonBorrar);
-  listaTareas.appendChild(nuevaTarea);
-  inputTarea.value = "";
-  inputFecha.value = "";
 });

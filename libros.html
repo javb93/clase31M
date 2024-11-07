@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <title>Libros</title>
+</head>
+<body>
+  <h1>LISTA DE LIBROS</h1>
+  <div id="listalibros"></div>
+  <script>
+    /*
+    {
+        "id": 0,
+        "name": "Mountain of madness",
+        "releaseDate": "1992-01-12T06:00:00.000Z",
+        "created_at": "2024-03-28T06:38:03.000Z",
+        "updated_at": null
+    }
+    */
+    const base_url = "http://localhost:3050";
+    fetch(base_url + "/books")
+      .then((res) => {
+        if (res.status == 200) {
+          return res.json();
+        } else {
+          console.log("Error, status is " + res.status);
+          console.log(res);
+        }
+      })
+      .then((data) => {
+        const listalibros = document.getElementById("listalibros");
+        data.forEach((libro) => {
+          const libroElement = document.createElement("div");
+          libroElement.appendChild(document.createTextNode(libro.name));
+          libroElement.appendChild(document.createElement("br"));
+          libroElement.appendChild(document.createTextNode(libro.releaseDate));
+          libroElement.appendChild(document.createElement("br"));
+          listalibros.appendChild(libroElement);
+        });
+      });
+  </script>
+</body>
